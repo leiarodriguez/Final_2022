@@ -51,6 +51,14 @@ this bar graph shows that males who has covid and didnt take the vaccine did wor
 
 ## Numerical results 
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=males) 
+rowPerc(table1)
+colPerc(table1)
+```
+ 
+ this table shows that males who have covid that took the vaccine 30% still had covid and people who took the placebo, 69% still had covid who took the vaccine stayed fairly the same to those who didnt take the vaccine. 
+ 
 ## Inferental results 
 
 ## Females 
@@ -79,6 +87,14 @@ this bar graph shows that females who has covid and didnt take the vaccine did w
 
 ## Numerical results 
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=Female) 
+rowPerc(table1)
+colPerc(table1)
+```
+
+this table shows that females who have covid that took the vaccine 40% still had covid and people who took the placebo, 60% still had covid who took the vaccine stayed fairly the same to those who didnt take the vaccine. 
+ 
 ## Inferental results 
 
 ## LGBTQ
@@ -106,6 +122,14 @@ barchartGC(~infected + treatment,data= LGBTQ, type="percent")
 this bar graph shows that LGBTQ who has covid and didnt take the vaccine did better then the LGBTQ that took the vaccine.The LGBTQ that took the vaccine and did not have covid stayed failry the same to the ones that didnt get the vaccine. 
 
 ## Numerical results 
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=LGBTQ) 
+rowPerc(table1)
+colPerc(table1)
+```
+
+this table shows that LGBTQ who have covid that took the vaccine 84% still had covid and people who took the placebo 15% still had covid. who took the vaccine stayed fairly the same to those who didnt take the vaccine.  
 
 ## Inferental results 
 
@@ -135,6 +159,14 @@ barchartGC(~infected + treatment,data= Druggies, type="percent")
 this bar graph shows the druggies had no reaction to taking the placebo or vacine and stayed failry the same. 
 
 ## Numerical results 
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=Druggies) 
+rowPerc(table1)
+colPerc(table1)
+```
+
+This table shows that there was no results to the infected and not affect who took the placebo and vaccine. 
 
 ## Inferental results 
 
