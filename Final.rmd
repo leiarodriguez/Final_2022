@@ -9,7 +9,7 @@ output:
 date: "`r Sys.Date()`" 
 ---
 
-```{r include=FALSE,echo=FALSE}
+```{r include=TRUE,echo=TRUE}
 require(tidyverse)
 require(tigerstats)
 require(forcats)
@@ -61,6 +61,14 @@ colPerc(table1)
  
 ## Inferental results 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+the p value is 0.0000000000001098. we reject the null hypothesis. the fisher exact test p value is  0.0000000000004631
+
 ## Females 
 
 $H_0$ the covid-921 vaccine does not exhibit a significant difference in effectiveness between females 
@@ -96,6 +104,14 @@ colPerc(table1)
 this table shows that females who have covid that took the vaccine 40% still had covid and people who took the placebo, 60% still had covid who took the vaccine stayed fairly the same to those who didnt take the vaccine. 
  
 ## Inferental results 
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+the p value is 0.0000000000002732 we reject the null hypothesis. the fisher exact test p value is  0.0000000000002162
 
 ## LGBTQ
 
@@ -133,16 +149,23 @@ this table shows that LGBTQ who have covid that took the vaccine 84% still had c
 
 ## Inferental results 
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+the p value is 0.0000000000006668 we reject the null hypothesis. the fisher exact test p value is 0.0000000000001029
 
 ## Druggies 
 
-$H_0$ the covid-921 vaccine does not exhibit a significant difference in effectiveness between drugies
+$H_0$ the covid-921 vaccine does not exhibit a significant difference in effectiveness between druggies
 
-$H_A$ the covid-921 vaccine does exhibit a significant difference in effectiveness between drugies  
+$H_A$ the covid-921 vaccine does exhibit a significant difference in effectiveness between druggies  
 
 ```{r}
 library(dplyr)
-Druggies = filter(FinalData, FinalData$DrugUser=="D")
+Druggies = filter(FinalData, FinalData$DrugUser=="yes")
 ```
 
 ## Methods 
@@ -156,18 +179,26 @@ barchartGC(~infected + treatment,data= Druggies)
 barchartGC(~infected + treatment,data= Druggies, type="percent")
 ```
 
-this bar graph shows the druggies had no reaction to taking the placebo or vacine and stayed failry the same. 
+this bar graph shows that druggies who has covid and didnt take the vaccine did better then the druggies that took the vaccine.The druggies that took the vaccine and did not have covid stayed failry the same to the ones that didnt get the vaccine.  
 
 ## Numerical results 
 
 ```{r}
-table1 <- xtabs(~infected + treatment, data=Druggies) 
-rowPerc(table1)
-colPerc(table1)
+table4 <- xtabs(~infected + treatment, data=Druggies) 
+rowPerc(table4)
+colPerc(table4)
 ```
+this table shows that druggies who have covid that took the vaccine 88% still had covid and people who took the placebo 11% still had covid. who took the vaccine stayed fairly the same to those who didnt take the vaccine.
 
-This table shows that there was no results to the infected and not affect who took the placebo and vaccine. 
 
 ## Inferental results 
 
-# Overall Results and Conclusions
+```{r} 
+chisq.test(table4)
+chisqtestGC(table4)
+fisher.test(table4)
+```
+
+the p value is 0.000000002842, we reject the null hypothesis the fisher exact test p value is  0.00000000232
+
+# Overall Results and Conclusions 
