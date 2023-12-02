@@ -202,3 +202,5 @@ fisher.test(table4)
 the p value is 0.000000002842, we reject the null hypothesis the fisher exact test p value is  0.00000000232
 
 # Overall Results and Conclusions 
+
+In conclusion the orginal question is the vaccine is suspected that it may exhibit different effectiveness across the variety of subpopulations. the males and femals who took the vaccine did better then the females and males who didnt the LGBTQ and druggies who didnt take the vaccine did better then the LGBTQ's and druggies who did.the male p value is  0.0000000000001098, the female p value is  0.0000000000002732, The LGBTQ p value is  0.0000000000006668 and the druggies p value is  0.000000002842. therefor since are the p values are lower then 0.05 we reject the null hypothesis.    
